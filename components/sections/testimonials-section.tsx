@@ -3,6 +3,12 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
+interface ITestimonialCardProps {
+  quote: string
+  name: string
+  title: string
+}
+
 export default function TestimonialsSection() {
   return (
     <section className="bg-white px-4 py-16 md:py-24">
@@ -11,7 +17,7 @@ export default function TestimonialsSection() {
           What People Are <span className="text-emerald-700">Saying</span>
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-center text-slate-600">
-          Our community loves their sustainable tote bags. Here's what they have to say about Waste Not.
+          Our community loves their sustainable tote bags. Here&apos;s what they have to say about Waste Not.
         </p>
 
         <div className="mt-12">
@@ -85,7 +91,7 @@ export default function TestimonialsSection() {
   )
 }
 
-function TestimonialCard({ quote, name, title }) {
+function TestimonialCard({ quote, name, title }: ITestimonialCardProps) {
   return (
     <Card className="border-none shadow-md">
       <CardContent className="p-6">
@@ -96,7 +102,7 @@ function TestimonialCard({ quote, name, title }) {
           <div className="h-2 w-2 rounded-full bg-emerald-500"></div>
           <div className="h-2 w-2 rounded-full bg-emerald-500"></div>
         </div>
-        <p className="mt-4 text-slate-600">"{quote}"</p>
+        <p className="mt-4 text-slate-600">&quot;{quote}&quot;</p>
         <div className="mt-6 flex items-center">
           <div className="h-10 w-10 rounded-full bg-emerald-200"></div>
           <div className="ml-3">

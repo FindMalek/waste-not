@@ -6,6 +6,7 @@ import { useState } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 interface ProductGalleryProps {
   images: {
@@ -81,7 +82,7 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
                 index === currentImageIndex ? "opacity-100" : "opacity-0 pointer-events-none",
               )}
             >
-              <img
+              <Image
                 src={image.src || "/placeholder.svg"}
                 alt={image.alt}
                 className="h-full w-full object-cover object-center"
@@ -106,7 +107,7 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
             aria-label={`View ${image.alt}`}
             aria-current={index === currentImageIndex}
           >
-            <img
+            <Image
               src={image.src || "/placeholder.svg"}
               alt={`Thumbnail for ${image.alt}`}
               className="h-full w-full object-cover object-center"

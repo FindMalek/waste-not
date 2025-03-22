@@ -99,7 +99,7 @@ export default function ProductSection() {
               <div className="mt-8 rounded-lg border border-emerald-200 bg-emerald-50 p-4">
                 <h3 className="font-medium">Sustainability Impact</h3>
                 <p className="mt-2 text-sm text-slate-600">
-                  By purchasing this tote bag, you're helping to divert approximately 1 pair of jeans from landfill and
+                  By purchasing this tote bag, you&apos;re helping to divert approximately 1 pair of jeans from landfill and
                   supporting student-led sustainability initiatives.
                 </p>
               </div>

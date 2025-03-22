@@ -12,7 +12,7 @@ export default function ThankYouPage() {
         </div>
         <h1 className="font-serif text-3xl font-medium text-slate-900 md:text-4xl">Thank You for Your Order!</h1>
         <p className="mt-4 text-lg text-slate-600">
-          We've received your order and will contact you shortly to confirm the details.
+          We&apos;ve received your order and will contact you shortly to confirm the details.
         </p>
         <p className="mt-2 text-slate-600">
           Your support helps us continue our mission of sustainable fashion and reducing textile waste.

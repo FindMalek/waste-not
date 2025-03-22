@@ -41,7 +41,7 @@ export default function FeaturesSection() {
               </div>
               <h3 className="mt-4 text-xl font-semibold">Positive Impact</h3>
               <p className="mt-2 text-slate-600">
-                By supporting Waste Not, you're contributing to a cleaner planet and promoting sustainable fashion
+                By supporting Waste Not, you&apos;re contributing to a cleaner planet and promoting sustainable fashion
                 practices.
               </p>
             </CardContent>

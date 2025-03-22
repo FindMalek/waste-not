@@ -1,6 +1,6 @@
 import { ArrowRight, Leaf, Recycle, Users } from "lucide-react"
 import Link from "next/link"
-
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 export default function AboutPage() {
@@ -32,7 +32,7 @@ export default function AboutPage() {
             </div>
             <div className="relative md:w-1/2">
               <div className="overflow-hidden rounded-lg bg-white p-4 shadow-lg">
-                <img
+                <Image
                   src="/placeholder.svg?height=400&width=600"
                   alt="Waste Not Team"
                   className="h-auto w-full rounded-md"
@@ -67,8 +67,8 @@ export default function AboutPage() {
               quality and durability in every product.
             </p>
             <p>
-              Today, we're proud to be making a small but meaningful impact in our community, one tote bag at a time.
-              We're constantly learning, growing, and exploring new ways to expand our sustainable fashion line.
+              Today, we&apos;re proud to be making a small but meaningful impact in our community, one tote bag at a time.
+              We&apos;re constantly learning, growing, and exploring new ways to expand our sustainable fashion line.
             </p>
           </div>
         </div>
@@ -97,7 +97,7 @@ export default function AboutPage() {
               </div>
               <h3 className="text-xl font-semibold text-slate-900">Community</h3>
               <p className="mt-4 text-slate-700">
-                We're proud to be part of the Faculty of Arts and Humanities of Sousse and aim to engage our local
+                We&apos;re proud to be part of the Faculty of Arts and Humanities of Sousse and aim to engage our local
                 community in sustainable practices through workshops, events, and collaborations.
               </p>
             </div>
@@ -122,13 +122,13 @@ export default function AboutPage() {
             Meet Our <span className="text-emerald-700">Team</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-slate-600">
-            We're a passionate group of students dedicated to making a difference through sustainable fashion.
+            We&apos;re a passionate group of students dedicated to making a difference through sustainable fashion.
           </p>
           <div className="mt-12 grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {[1, 2, 3, 4, 5, 6, 7, 8].map((member) => (
               <div key={member} className="flex flex-col items-center">
                 <div className="relative h-48 w-48 overflow-hidden rounded-full">
-                  <img
+                  <Image
                     src={`/placeholder.svg?height=200&width=200&text=Team Member ${member}`}
                     alt={`Team Member ${member}`}
                     className="h-full w-full object-cover"
@@ -154,7 +154,7 @@ export default function AboutPage() {
                 Join Our <span className="text-emerald-700">Journey</span>
               </h2>
               <p className="mt-4 text-lg text-slate-600">
-                Whether you're interested in purchasing our products, donating materials, or collaborating with us, we'd
+                Whether you&apos;re interested in purchasing our products, donating materials, or collaborating with us, we&apos;d
                 love to hear from you. Together, we can make sustainability stylish!
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">

@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Facebook, Heart, Instagram, Mail, MapPin, Phone, Twitter } from "lucide-react"
+import Image from "next/image"
 
 export function SiteFooter() {
   return (
@@ -9,7 +10,7 @@ export function SiteFooter() {
           <div>
             <Link href="/" className="flex items-center space-x-2">
               <div className="relative h-10 w-10 overflow-hidden rounded-full bg-white">
-                <img src="/logo.png" alt="Waste Not Logo" className="h-full w-full object-cover" />
+                <Image src="/logo.png" alt="Waste Not Logo" className="h-full w-full object-cover" />
               </div>
               <span className="font-serif text-xl font-medium text-white">Waste Not</span>
             </Link>

@@ -1,7 +1,3 @@
-import { Leaf, ShoppingBag } from "lucide-react"
-
-import { Button } from "@/components/ui/button"
-
 export default function HeroSection() {
   return (
     <section className="relative flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-emerald-100 to-emerald-200 px-4 py-24 text-center md:py-32">

@@ -9,8 +9,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Textarea } from "@/components/ui/textarea"
-
+import Image from "next/image"
 interface IProduct {
   name: string
   price: number
@@ -88,9 +87,12 @@ export default function OrderModal({ isOpen, onClose, product }: IOrderModalProp
           {/* Product Information */}
           <div className="flex items-start space-x-4">
             <div className="h-20 w-20 overflow-hidden rounded-md bg-slate-100">
-              <img
+              <Image
                 src={product.image || "/placeholder.svg"}
                 alt={product.name}
+                width={80}
+                height={80}
+
                 className="h-full w-full object-cover"
               />
             </div>
