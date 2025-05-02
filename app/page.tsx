@@ -1,7 +1,7 @@
 import HeroSection from "@/components/sections/hero-section"
 import FeaturesSection from "@/components/sections/features-section"
 import ProductSection from "@/components/sections/product-section"
-import TestimonialsSection from "@/components/sections/testimonials-section"
+import ShowcaseSection from "@/components/sections/showcase-section"
 import DonationSection from "@/components/sections/donation-section"
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
       <HeroSection />
       <FeaturesSection />
       <ProductSection />
-      <TestimonialsSection />
+      <ShowcaseSection />
       <DonationSection />
     </div>
   )

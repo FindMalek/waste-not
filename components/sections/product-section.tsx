@@ -2,120 +2,92 @@
 
 import { useState } from "react"
 import { ArrowRight } from "lucide-react"
+import Image from "next/image"
 
 import { Button } from "@/components/ui/button"
 import OrderModal from "@/components/order-modal"
-import ProductGallery from "@/components/product-gallery"
+
+interface Product {
+  id: number
+  name: string
+  price: number
+  deliveryFee: number
+  description: string
+  image: string
+}
 
 export default function ProductSection() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedProduct, setSelectedProduct] = useState(0)
 
-  const productDetails = {
-    name: "Denim Tote Bag",
-    price: 25.0,
-    deliveryFee: 7.0,
-    description:
-      "Functional, stylish, and sustainable. Our denim tote bags are perfect for everyday use, from grocery shopping to campus life.",
-    images: [
-      {
-        src: "/placeholder.svg?height=600&width=600&text=Denim Tote Front",
-        alt: "Denim Tote Bag - Front View",
-      },
-      {
-        src: "/placeholder.svg?height=600&width=600&text=Denim Tote Side",
-        alt: "Denim Tote Bag - Side View",
-      },
-      {
-        src: "/placeholder.svg?height=600&width=600&text=Denim Tote Inside",
-        alt: "Denim Tote Bag - Inside View",
-      },
-      {
-        src: "/placeholder.svg?height=600&width=600&text=Denim Tote Detail",
-        alt: "Denim Tote Bag - Detail View",
-      },
-      {
-        src: "/placeholder.svg?height=600&width=600&text=Denim Tote In Use",
-        alt: "Denim Tote Bag - In Use",
-      },
-    ],
+  const products: Product[] = [
+    {
+      id: 1,
+      name: "Denim Tote Bag",
+      price: 25.0,
+      deliveryFee: 7.0,
+      description:
+        "Functional, stylish, and sustainable. Our denim tote bags are perfect for everyday use, from grocery shopping to campus life.",
+      image: "/products/1.jpg"
+    },
+    {
+      id: 2,
+      name: "Upcycled Denim Pouch",
+      price: 15.0,
+      deliveryFee: 5.0,
+      description:
+        "A compact pouch made from upcycled denim, perfect for storing small essentials or as a stylish accessory.",
+        image: "/products/2.jpg"
+      }
+  ]
+
+  const openModal = (productIndex: number) => {
+    setSelectedProduct(productIndex)
+    setIsModalOpen(true)
   }
 
   return (
     <section id="product" className="bg-emerald-50 px-4 py-16 md:py-24">
       <div className="container mx-auto max-w-6xl">
-        <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:gap-16">
-          {/* Product Gallery - Takes more space on larger screens */}
-          <div className="w-full lg:w-3/5">
-            <ProductGallery images={productDetails.images} />
-          </div>
-
-          {/* Product Information */}
-          <div className="w-full lg:w-2/5">
-            <div className="sticky top-20">
-              <h2 className="font-serif text-3xl font-medium text-slate-900 md:text-4xl">
-                Our Signature <span className="text-emerald-700">Denim Tote</span>
-              </h2>
-
-              <div className="mt-2">
-                <p className="text-2xl font-bold text-emerald-700">{productDetails.price.toFixed(2)} TND</p>
+        <h2 className="font-serif text-3xl font-medium text-slate-900 md:text-4xl">
+          Our <span className="text-emerald-700">Products</span>
+        </h2>
+        
+        <div className="mt-12 grid gap-8 md:grid-cols-2">
+          {products.map((product, index) => (
+            <div key={product.id} className="flex flex-col rounded-lg bg-white p-6 shadow-md">
+              <div className="relative aspect-square overflow-hidden rounded-md">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  className="h-full w-full object-cover"
+                  width={400}
+                  height={400}
+                />
               </div>
-
-              <p className="mt-4 text-lg text-slate-700">{productDetails.description}</p>
-
-              <div className="mt-8 space-y-4">
-                <div className="flex items-start">
-                  <div className="mr-4 mt-1 h-6 w-6 rounded-full bg-emerald-200 text-center text-emerald-800">✓</div>
-                  <div>
-                    <h3 className="text-lg font-semibold">Durable Construction</h3>
-                    <p className="text-slate-600">Made from sturdy denim that will last for years</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="mr-4 mt-1 h-6 w-6 rounded-full bg-emerald-200 text-center text-emerald-800">✓</div>
-                  <div>
-                    <h3 className="text-lg font-semibold">Spacious Interior</h3>
-                    <p className="text-slate-600">Plenty of room for books, groceries, or daily essentials</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="mr-4 mt-1 h-6 w-6 rounded-full bg-emerald-200 text-center text-emerald-800">✓</div>
-                  <div>
-                    <h3 className="text-lg font-semibold">Unique Design</h3>
-                    <p className="text-slate-600">Each bag has its own character from the original denim</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-8">
-                <Button
-                  size="lg"
-                  className="w-full bg-emerald-700 hover:bg-emerald-800 sm:w-auto"
-                  onClick={() => setIsModalOpen(true)}
-                >
-                  Order Now <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
-
-              <div className="mt-8 rounded-lg border border-emerald-200 bg-emerald-50 p-4">
-                <h3 className="font-medium">Sustainability Impact</h3>
-                <p className="mt-2 text-sm text-slate-600">
-                  By purchasing this tote bag, you&apos;re helping to divert approximately 1 pair of jeans from landfill and
-                  supporting student-led sustainability initiatives.
-                </p>
-              </div>
+              
+              <h3 className="mt-4 text-2xl font-semibold text-slate-900">{product.name}</h3>
+              <p className="mt-1 text-xl font-bold text-emerald-700">{product.price.toFixed(2)} TND</p>
+              <p className="mt-3 text-slate-700">{product.description}</p>
+              
+              <Button 
+                className="mt-6 w-full"
+                onClick={() => openModal(index)}
+              >
+                Order Now <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
             </div>
-          </div>
+          ))}
         </div>
       </div>
-
-      <OrderModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        product={{
-          ...productDetails,
-          image: productDetails.images[0].src,
-        }}
-      />
+      
+      {isModalOpen && (
+        <OrderModal
+          isOpen={isModalOpen}
+          product={products[selectedProduct]}
+          onClose={() => setIsModalOpen(false)}
+        />
+      )}
     </section>
   )
 }

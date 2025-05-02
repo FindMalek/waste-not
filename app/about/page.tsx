@@ -36,6 +36,8 @@ export default function AboutPage() {
                   src="/placeholder.svg?height=400&width=600"
                   alt="Waste Not Team"
                   className="h-auto w-full rounded-md"
+                  width={100}
+                  height={100}
                 />
               </div>
               <div className="absolute -bottom-4 -right-4 -z-10 h-full w-full rounded-lg bg-emerald-200"></div>
@@ -132,6 +134,8 @@ export default function AboutPage() {
                     src={`/placeholder.svg?height=200&width=200&text=Team Member ${member}`}
                     alt={`Team Member ${member}`}
                     className="h-full w-full object-cover"
+                    width={100}
+                    height={100}
                   />
                 </div>
                 <h3 className="mt-4 text-xl font-semibold text-slate-900">Team Member {member}</h3>

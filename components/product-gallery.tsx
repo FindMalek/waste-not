@@ -86,6 +86,8 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
                 src={image.src || "/placeholder.svg"}
                 alt={image.alt}
                 className="h-full w-full object-cover object-center"
+                width={100}
+                height={100}
               />
             </div>
           ))}
@@ -111,6 +113,8 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
               src={image.src || "/placeholder.svg"}
               alt={`Thumbnail for ${image.alt}`}
               className="h-full w-full object-cover object-center"
+              width={100}
+              height={100}
             />
           </button>
         ))}

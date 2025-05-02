@@ -10,7 +10,7 @@ export function SiteFooter() {
           <div>
             <Link href="/" className="flex items-center space-x-2">
               <div className="relative h-10 w-10 overflow-hidden rounded-full bg-white">
-                <Image src="/logo.png" alt="Waste Not Logo" className="h-full w-full object-cover" />
+                <Image src="/logo.png" alt="Waste Not Logo" className="h-full w-full object-cover" width={100} height={100} />
               </div>
               <span className="font-serif text-xl font-medium text-white">Waste Not</span>
             </Link>
@@ -81,7 +81,7 @@ export function SiteFooter() {
         <div className="mt-8 border-t border-slate-800 pt-6 text-center">
           <p className="text-sm text-slate-400">© {new Date().getFullYear()} Waste Not. All rights reserved.</p>
           <p className="mt-2 flex items-center justify-center text-sm text-slate-400">
-            Made with <Heart className="mx-1 h-4 w-4 text-emerald-500" />by {" "} <Link href="https://www.findmalek.com" className="text-white hover:text-emerald-400">Malek Gara-Hellal</Link>
+            Made with <Heart className="mx-1 h-4 w-4 text-emerald-500" />by  <Link href="https://www.findmalek.com" className="text-white hover:text-emerald-400 pl-1">Malek Gara-Hellal</Link>
           </p>
         </div>
       </div>

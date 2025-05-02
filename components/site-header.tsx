@@ -14,7 +14,7 @@ export function SiteHeader() {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Products", href:"/#products" },
+    { name: "Products", href: "/#products" },
   ]
 
   return (
@@ -23,7 +23,10 @@ export function SiteHeader() {
         <div className="flex items-center">
           <Link href="/" className="flex items-center space-x-2">
             <div className="relative h-10 w-10 overflow-hidden rounded-full">
-              <Image src="/logo.png" alt="Waste Not Logo" className="h-full w-full object-cover" />
+              <Image src="/logo.png" alt="Waste Not Logo" className="h-full w-full object-cover"
+                width={100}
+                height={100}
+              />
             </div>
             <span className="font-serif text-xl font-medium text-slate-900">Waste Not</span>
           </Link>
